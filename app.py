@@ -78,7 +78,7 @@ if uploaded_pdf is not None:
   if st.button("Convert to Audio"):
     with st.spinner(f"Converting {uploaded_pdf.name} to audio..."):
       filename = get_filename_without_extension(uploaded_pdf.name)
-      path = os.path.join("pdfs", uploaded_pdf.name) 
+      path = os.path.join("pdfs", uploaded_pdf.name)
       filenames = pdf2Image(path)
       outFile = convertImagesToText(filenames,filename)
       text = open(outFile).read()
